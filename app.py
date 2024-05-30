@@ -6,16 +6,16 @@ import pandas as pd
 import pandas as pd2
 
 
-# Set page configuration
+# Establecer configuración de página
 st.set_page_config(page_title="Asistente de salud",
                    layout="wide",
                    page_icon="🩺")
 
     
-# getting the working directory of the main.py
+# obtener el directorio de trabajo de main.py
 working_dir = os.path.dirname(os.path.abspath(__file__))
 
-# loading the saved models
+# cargar modelos guardados
 
 diabetes_model = pickle.load(open(f'{working_dir}/saved_models/diabetes_model.sav', 'rb'))
 
@@ -24,23 +24,22 @@ hipertension_model = pickle.load(open(f'{working_dir}/saved_models/hipertension_
 # sidebar for navigation
 
 with st.sidebar:
-    selected = option_menu('Predicción de enfermedades',
+    selected = option_menu('Diagnóstico de enfermedades',
 
-                           ['Predicción de diabetes',
-                            'Predicción de hipertensión'
+                           ['Diagnóstico de diabetes',
+                            'Diagnóstico de hipertensión'
                             ],
                            menu_icon='clipboard-check',
                            icons=['activity', 'heart'],
                            default_index=0)
 
 
-# Diabetes Prediction Page
-if selected == 'Predicción de diabetes':
 
-    # page title
-    st.title('Predicción de diabetes usando algoritmo de machine learning')
+if selected == 'Diagnóstico de diabetes':
 
-    # getting the input data from the user
+
+    st.title('Diagnóstico de diabetes usando algoritmo de machine learning')
+
     col1, col2, col3 = st.columns(3)
 
     with col1:
@@ -68,7 +67,7 @@ if selected == 'Predicción de diabetes':
         Age = st.text_input('Edad de la persona')
 
 
-    # code for Prediction
+ 
     diab_diagnosis = ''
 
     # creating a button for Prediction
@@ -91,11 +90,11 @@ if selected == 'Predicción de diabetes':
 
     st.success(diab_diagnosis)
 
-# Heart Disease Prediction Page
-if selected == 'Predicción de hipertensión':
 
-    # page title
-    st.title('Predicción de hipertensión usando algoritmo de machine learning')
+if selected == 'Diagnóstico de hipertensión':
+
+ 
+    st.title('Diagnóstico de hipertensión usando algoritmo de machine learning')
 
     col1, col2, col3 = st.columns(3)
 
