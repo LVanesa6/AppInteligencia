@@ -24,10 +24,10 @@ hipertension_model = pickle.load(open(f'{working_dir}/saved_models/hipertension_
 # sidebar for navigation
 
 with st.sidebar:
-    selected = option_menu('Diagnóstico de enfermedades',
+    selected = option_menu('Herramienta de ayuda diagnóstico de enfermedades',
 
-                           ['Diagnóstico de diabetes',
-                            'Diagnóstico de hipertensión'
+                           ['Clasificación de diabetes',
+                            'Clasificación de hipertensión'
                             ],
                            menu_icon='clipboard-check',
                            icons=['activity', 'heart'],
@@ -35,10 +35,10 @@ with st.sidebar:
 
 
 
-if selected == 'Diagnóstico de diabetes':
+if selected == 'Clasificación de diabetes':
 
 
-    st.title('Diagnóstico de diabetes usando algoritmo de machine learning')
+    st.title('Herramienta de ayuda para el diagnóstico de diabetes usando algoritmo de machine learning')
 
     col1, col2, col3 = st.columns(3)
 
@@ -91,10 +91,10 @@ if selected == 'Diagnóstico de diabetes':
     st.success(diab_diagnosis)
 
 
-if selected == 'Diagnóstico de hipertensión':
+if selected == 'Clasificación de hipertensión':
 
  
-    st.title('Diagnóstico de hipertensión usando algoritmo de machine learning')
+    st.title('Herramienta de ayduda para diagnótico de hipertensión usando algoritmo de machine learning')
 
     col1, col2, col3 = st.columns(3)
 
